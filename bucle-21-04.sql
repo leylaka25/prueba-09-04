@@ -1,3 +1,20 @@
+declare
+    numero int;
+begin
+    numero := &valor1;
+    while (numero <> 1) loop
+        -- AVERIGUAMOS SI ES PAR O IMPAR
+        if (mod(numero, 2) = 0) then
+            numero := numero / 2;
+        else
+            numero := numero * 3 + 1;
+        end if;
+        dbms_output.put_line(numero);
+    end loop;
+        dbms_output.put_line('Fin de programa');
+end;          
+undefine valor;
+
 --VAMOS A MOSTRAR LA SUMA DE LOS PRIMEROS 100 NUMEROS
 --1) LOOP..END LOOP
 DECLARE
@@ -125,3 +142,37 @@ undefine final;
 
 --QUEREMOS UN BUCLE PIDIENDO UN INICIO Y UN FIN
 --MOSTRAR LOS NUMEROS PARES COMPRENDIDOS ENTRE DICHO INICIO Y FIN
+declare
+     ini int;
+     fin int;
+begin
+    ini := &inicial
+    fin := &final;
+    for i in ini..fin loop
+        if (mod(i, 2) = 0) then
+           dbms_output.put_line(i);
+        end if;
+    end loop;
+    dbms_output.put_line('fin de programa');
+end;
+undefine inicial;
+undefine final;
+
+--conjetura de collatz
+--La teoria indcica que cualquier numero siempre llegara a ser 1 
+--siguendo una serie de instrucciones:
+--si el numero es par, se divide entre 2 
+--si el numero es impar, se multiplica por 3 y sumamos 1
+--6,3,10,5,16,8,4,2,1
+declare
+     i int;
+begin
+    ini := &inicial
+    fin := &final;
+    for i in ini..fin loop
+        if (mod(i, 2) = 0) then
+           dbms_output.put_line(i);
+
+
+
+
